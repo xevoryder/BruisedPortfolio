@@ -1,0 +1,171 @@
+# OSINT & Investigative Workflow Study
+
+## Objective
+
+Develop a professional, ethical, and repeatable workflow for open-source research and investigative analysis using publicly available information.
+
+The goal of this project is not to access private systems, bypass controls, or perform unauthorized activity. The goal is to practice structured research, source validation, documentation, and analytical reporting in a way that can support IT operations, legal operations, compliance, fraud review, security support, and investigative analyst work.
+
+---
+
+## Why This Project Matters
+
+Many technical and operational problems are not solved by tools alone. They require asking the right questions, gathering accurate information, validating sources, identifying patterns, and explaining findings clearly.
+
+This project demonstrates the ability to:
+
+- Work through incomplete information
+- Separate assumptions from verified facts
+- Organize findings into a clear structure
+- Build timelines from scattered data
+- Evaluate credibility of sources
+- Document conclusions in a professional format
+
+---
+
+## Professional Background Connection
+
+This workflow connects directly to my experience in legal intake, CRM systems, operations supervision, and incident documentation.
+
+At Morgan & Morgan, I evaluate personal injury and mass tort inquiries for viability by reviewing facts, liability indicators, damages thresholds, documentation, timelines, and client credibility. That process requires structured questioning, information validation, accurate CRM documentation, and proper escalation.
+
+At UPS, I supported operational and safety workflows involving incident review, formal reporting, root-cause analysis, corrective action planning, and compliance documentation.
+
+This OSINT workflow builds on those same habits and applies them to technical and research-based environments.
+
+---
+
+## Core Workflow
+
+### 1. Define the Question
+
+Before collecting information, define the exact research objective.
+
+Examples:
+
+- What happened?
+- Who or what is involved?
+- When did the event occur?
+- What systems, accounts, companies, or public sources are relevant?
+- What information is verified versus assumed?
+
+A clear question prevents wasted effort and keeps the investigation focused.
+
+---
+
+### 2. Establish Scope
+
+Define what is allowed and what is off-limits.
+
+Allowed:
+
+- Public websites
+- Public business records
+- Public social media profiles
+- Public news sources
+- Public technical documentation
+- Public breach reports or advisories
+- Public domain records
+- Search engine results
+- Public government databases
+
+Not allowed:
+
+- Unauthorized login attempts
+- Password guessing
+- Bypassing access controls
+- Private account access
+- Social engineering
+- Malware
+- Exploitation
+- Harassment or doxxing
+
+This keeps the workflow legal, ethical, and professional.
+
+---
+
+### 3. Collect Initial Leads
+
+Start broad, then narrow.
+
+Potential source categories:
+
+- Search engines
+- Company websites
+- LinkedIn
+- Public GitHub repositories
+- Public documentation
+- News articles
+- Government records
+- Public court records
+- WHOIS / domain information
+- Public job postings
+- Public social media content
+- Technical forums
+
+The purpose of this step is not to jump to conclusions. It is to build an initial map of available information.
+
+---
+
+### 4. Validate Sources
+
+Each source should be reviewed for credibility.
+
+Questions to ask:
+
+- Is this a primary source?
+- Is it current?
+- Is it archived or outdated?
+- Can another source confirm it?
+- Is there a conflict of interest?
+- Is the information direct evidence or just commentary?
+- Is the source official, user-generated, or speculative?
+
+This step helps prevent bad conclusions based on weak information.
+
+---
+
+### 5. Build a Timeline
+
+When time matters, organize findings chronologically.
+
+Timeline format:
+
+| Date | Event | Source | Confidence |
+|---|---|---|---|
+| YYYY-MM-DD | Event description | Source link or note | High / Medium / Low |
+
+Timelines are useful for:
+
+- Incident review
+- Case investigation
+- Security analysis
+- Legal intake
+- Fraud review
+- Technical troubleshooting
+- Project reconstruction
+
+---
+
+### 6. Separate Facts, Assumptions, and Unknowns
+
+A strong investigation does not pretend guesses are facts.
+
+Use this structure:
+
+```md
+## Verified Facts
+- Fact 1
+- Fact 2
+
+## Assumptions
+- Assumption 1
+- Assumption 2
+
+## Unknowns
+- Unknown 1
+- Unknown 2
+
+## Next Questions
+- Question 1
+- Question 2
