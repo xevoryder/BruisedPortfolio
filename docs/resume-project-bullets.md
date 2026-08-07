@@ -1,18 +1,28 @@
-# Resume Project Bullets
+# Network & Systems Project Evidence
 
-Use these bullets in resumes, LinkedIn, or applications.
+These statements summarize validated work documented in this portfolio. They are written for reuse in résumés, cover letters, LinkedIn, and applications without presenting homelab work as employer-managed production experience.
 
-## Homelab Infrastructure & Troubleshooting Portfolio
+## Network & Infrastructure Homelab
 
-- Built and documented a WireGuard VPN deployment on Ubuntu Server 24.04, including mobile peer onboarding, QR code provisioning, permissions troubleshooting, and routing validation.
-- Resolved Linux access and configuration issues by checking privilege boundaries, rebuilding malformed configs, installing missing dependencies, and testing network behavior at each layer.
-- Troubleshot OpenClaw Gateway setup using systemd user service checks, config-file review, origin restriction analysis, secure-context requirements, and service log review.
-- Configured home network stability improvements using DHCP reservation planning, router/server role separation, and local service access validation.
-- Designed a Jellyfin-based private media server architecture with expandable storage planning, local network access, Apple TV playback considerations, and server/NAS tradeoff analysis.
-- Developed operator-log documentation that captures problem, assumption, root cause, fix, validation, and lesson learned for each technical issue.
+- Built and maintain a rack-mounted infrastructure environment supporting Windows Server, Ubuntu Server 24.04, RAID-backed storage, and NAS services by installing, configuring, and validating server hardware, operating systems, and centralized storage.
+- Enabled secure remote access to internal network services by deploying WireGuard VPN, onboarding mobile peers, assigning DHCP reservations, configuring required routing and port-forwarding rules, and validating connectivity from external networks.
+- Improved availability of self-hosted services by deploying and troubleshooting Docker, CasaOS, Jellyfin, and OpenClaw, resolving configuration, permissions, dependency, secure-origin, and systemd service failures.
+- Standardized technical troubleshooting across a public GitHub portfolio by documenting each issue through a seven-part process covering the problem, assumptions, root cause, corrective action, validation, and lessons learned.
 
-## OSINT / Investigative Workflow
+## Hardware, Cabling & Network Troubleshooting
 
-- Developed a structured open-source research workflow focused on ethical information gathering, source validation, timeline reconstruction, and analytical reporting.
-- Built reusable documentation templates for separating verified facts, assumptions, unknowns, evidence, confidence levels, and recommended next steps.
-- Connected legal intake, incident review, CRM documentation, and technical troubleshooting experience into a repeatable investigative analysis process.
+- Built and validated three custom desktop systems by installing and configuring motherboards, CPUs, RAM, GPUs, storage, power supplies, cooling systems, BIOS/UEFI settings, and Windows or Ubuntu operating systems.
+- Established reliable wired connectivity across home installations by terminating and testing Cat 5e and Cat 6 cabling, crimping RJ45 connectors, punching down keystone jacks, routing Ethernet through walls and ceilings, and installing access points.
+- Restored Gigabit Ethernet connectivity across two affected network paths by isolating switches, patch cables, wall jacks, and endpoints, identifying failed keystone jacks, and replacing the defective termination points.
+
+## Documentation Standard
+
+Every published case study should identify:
+
+1. Objective
+2. Environment
+3. Expected behavior
+4. Actual behavior
+5. Diagnostic process
+6. Root cause and correction
+7. Validation and lesson learned
