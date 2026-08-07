@@ -15,7 +15,7 @@ I approach technical problems as an operator: define the expected behavior, isol
 | Project | Evidence |
 |---|---|
 | [WireGuard VPN Server](./projects/wireguard-vpn-operator-log.md) | Deployed WireGuard on Ubuntu Server 24.04, onboarded a mobile peer, resolved permissions and configuration failures, and validated the traffic path rather than relying only on connection status. |
-| [Home Network Optimization & Gigabit Restoration](./projects/home-network-optimization-case-study.md) | Stabilized server addressing with DHCP reservations and restored Gigabit Ethernet across two affected paths by isolating switches, patch cables, wall jacks, and endpoints before replacing failed keystone terminations. |
+| [Home Network Optimization & Gigabit Restoration](./projects/home-network-optimization-case-study.md) | Standardized eight keystone jacks to T568B by replacing two damaged jacks and re-terminating six existing jacks, then validated a 1 Gbps wired Ethernet link. |
 | [Linux Application Gateway Troubleshooting](./projects/openclaw-gateway-operator-log.md) | Used `systemctl --user`, service logs, JSON inspection, origin controls, and permission analysis to diagnose a multi-layer application gateway deployment. |
 | [Jellyfin Media Server](./projects/jellyfin-media-server-case-study.md) | Designed a self-hosted media service around practical storage, LAN access, client integration, and future expansion requirements. |
 
@@ -34,7 +34,7 @@ I approach technical problems as an operator: define the expected behavior, isol
 
 ## Selected Outcomes
 
-- Restored Gigabit Ethernet connectivity across two network paths by identifying and replacing failed keystone termination points.
+- Restored Gigabit-capable connectivity across two network paths by correcting eight keystone terminations—replacing two damaged jacks and re-terminating six—and validating a 1 Gbps wired link.
 - Enabled remote access to internal services through a WireGuard VPN with mobile peer onboarding and routing validation.
 - Built and maintained rack-mounted Windows Server and Ubuntu Server infrastructure supporting centralized storage and self-hosted services.
 - Resolved service failures involving Linux permissions, missing dependencies, malformed configuration, secure-origin controls, and systemd behavior.
