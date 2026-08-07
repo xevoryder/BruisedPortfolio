@@ -7,7 +7,7 @@
 | Service troubleshooting | systemd user-service checks, configuration inspection, restart validation, and layered fault isolation |
 | VPN and remote access | WireGuard server deployment, mobile peer onboarding, routing validation, and permission troubleshooting |
 | Network services | DHCP reservations, DNS concepts, NAT/port forwarding, LAN service access, and router/server role separation |
-| Physical networking | Cat 5e/Cat 6 installation, RJ45 and keystone termination, switch isolation, and Gigabit link restoration |
+| Physical networking | Cat 5e/Cat 6 installation, RJ45 work, eight-jack T568B standardization, two keystone replacements, six re-terminations, switch isolation, and 1 Gbps link validation |
 | Storage and applications | RAID/NAS concepts, SMB/NFS concepts, Jellyfin, Docker, CasaOS, and self-hosted service planning |
 | Documentation | Operator logs structured around expected behavior, failure, root cause, correction, validation, and lessons learned |
 | Troubleshooting | One-variable-at-a-time testing across hardware, cabling, network, operating-system, service, application, configuration, and permission layers |
