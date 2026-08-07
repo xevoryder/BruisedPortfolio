@@ -7,7 +7,7 @@
 | Environment | Home LAN supporting Windows Server, Ubuntu Server, WireGuard, Jellyfin, and other self-hosted services |
 | Router | ASUS ROG Rapture GT-AC5300 |
 | Primary work | DHCP reservation, role separation, structured Layer 1–3 troubleshooting |
-| Validated result | Stable server addressing and Gigabit Ethernet restored across two affected network paths |
+| Validated result | Stable server addressing, corrected terminations across eight keystone jacks, and a Windows Ethernet link negotiating at 1 Gbps |
 
 ## Objective
 
@@ -66,19 +66,39 @@ I treated the link as a chain and isolated each component instead of assuming th
 3. Swapped known-good patch cables into the path.
 4. Compared behavior before and after the wall runs.
 5. Narrowed the shared failure point to the wall-jack terminations.
-6. Inspected and corrected the failed keystone jacks.
+6. Inspected all eight keystone jacks involved in the affected runs.
+7. Replaced two damaged jacks and re-terminated the remaining six using a consistent T568B pinout.
 
 ### Root Cause
 
-The wall jacks had failed termination points. Gigabit Ethernet requires all four twisted pairs, while a damaged pair can allow a link to fall back to 100 Mbps instead of failing completely.
+Two keystone jacks were damaged, while six additional jacks required corrected pair order and terminations. Gigabit Ethernet requires all four twisted pairs, while a damaged or incorrectly terminated pair can allow a link to fall back to 100 Mbps instead of failing completely.
+
+Both T568A and T568B support Gigabit Ethernet when the cable is terminated consistently and correctly at both ends. Moving the installation to T568B did not create the speed increase by itself; the improvement came from repairing damaged hardware, correcting pair placement, and restoring continuity across all four pairs.
 
 ### Corrective Action
 
-I replaced the defective keystone termination points and revalidated the complete paths.
+I standardized all eight keystone jacks to T568B, replacing two damaged jacks and re-terminating six existing jacks before revalidating the wired connections.
+
+### Validation Evidence
+
+I checked the wired-adapter link state from Windows PowerShell:
+
+```powershell
+Get-NetAdapter | Select-Object Name, Status, LinkSpeed
+```
+
+Relevant result:
+
+```text
+Name       Status  LinkSpeed
+Ethernet   Up      1 Gbps
+```
+
+Internet speed tests were also run through Speedtest.net after the repair as a secondary throughput check. The adapter-reported link speed is the direct validation that the endpoint negotiated a Gigabit Ethernet connection.
 
 ### Result
 
-Both affected network paths returned to Gigabit Ethernet connectivity.
+The repaired paths were no longer limited to 100 Mbps, and the captured Windows adapter state confirmed a 1 Gbps wired Ethernet negotiation.
 
 ### Takeaway
 
