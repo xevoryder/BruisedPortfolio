@@ -1,27 +1,31 @@
-# Skills Matrix
+# Technical Skills Matrix
 
-## Technical Skill Areas
-
-| Skill Area | Evidence From Portfolio |
+| Skill Area | Portfolio Evidence |
 |---|---|
-| Linux CLI | Ubuntu Server work, WireGuard config, OpenClaw service checks |
-| File Permissions | `/etc/wireguard/` access troubleshooting |
-| Systemd Services | `systemctl --user status openclaw-gateway.service` checks |
-| VPN Concepts | WireGuard server, peer config, mobile onboarding, routing validation |
-| Networking | DHCP reservation, LAN service access, router/server role separation |
-| CRM Operations | Salesforce/Litify workflows, lead status tracking, intake records |
-| Documentation | Operator logs, case studies, investigation templates |
-| Troubleshooting | Root cause analysis, issue isolation, one-variable-at-a-time testing |
-| OSINT / Research | Source validation, timeline reconstruction, ethical open-source workflows |
+| Linux administration | Ubuntu Server 24.04, Linux CLI, protected configuration paths, dependency installation, and log review |
+| Windows and infrastructure | Rack-mounted Windows Server and Ubuntu Server environment with RAID/NAS-backed storage and self-hosted services |
+| Service troubleshooting | systemd user-service checks, configuration inspection, restart validation, and layered fault isolation |
+| VPN and remote access | WireGuard server deployment, mobile peer onboarding, routing validation, and permission troubleshooting |
+| Network services | DHCP reservations, DNS concepts, NAT/port forwarding, LAN service access, and router/server role separation |
+| Physical networking | Cat 5e/Cat 6 installation, RJ45 and keystone termination, switch isolation, and Gigabit link restoration |
+| Storage and applications | RAID/NAS concepts, SMB/NFS concepts, Jellyfin, Docker, CasaOS, and self-hosted service planning |
+| Documentation | Operator logs structured around expected behavior, failure, root cause, correction, validation, and lessons learned |
+| Troubleshooting | One-variable-at-a-time testing across hardware, cabling, network, operating-system, service, application, configuration, and permission layers |
 
 ## Role Alignment
 
-| Target Role | Portfolio Match |
+| Target Role | Relevant Evidence |
 |---|---|
-| IT Support Specialist | Troubleshooting, documentation, user/system issue analysis |
-| Help Desk Tier II | Escalation-style thinking, root cause notes, CRM/ticketing experience |
-| Junior Systems Administrator | Linux server, services, config files, homelab infrastructure |
-| Network Support Technician | VPN, DHCP, routing concepts, LAN service access |
-| CRM Systems Analyst | Salesforce/Litify workflows, data integrity, case pipeline tracking |
-| Technical Operations Analyst | Systems thinking, documentation, workflow optimization |
-| Investigative Analyst Support | Legal intake, source validation, incident-style reporting |
+| Network Support Technician | WireGuard, DHCP, routing and switching fundamentals, cabling, and Layer 1–3 diagnosis |
+| Systems Support Technician | Windows/Ubuntu Server, Linux CLI, systemd, permissions, storage, and self-hosted services |
+| Technical Support Specialist | Structured troubleshooting, end-to-end validation, technical documentation, and escalation-ready notes |
+| Field Support / Infrastructure Technician | Rack-mounted hardware, custom systems, cabling, termination work, switches, and endpoint isolation |
+| Network Engineer Trainee | Active CCNA study, subnetting/VLSM, VLAN concepts, Packet Tracer, and practical networking projects |
+
+## Evidence Links
+
+- [WireGuard VPN Server](../projects/wireguard-vpn-operator-log.md)
+- [Home Network Optimization & Gigabit Restoration](../projects/home-network-optimization-case-study.md)
+- [Linux Application Gateway Troubleshooting](../projects/openclaw-gateway-operator-log.md)
+- [Jellyfin Media Server](../projects/jellyfin-media-server-case-study.md)
+- [Troubleshooting Method](./troubleshooting-method.md)
