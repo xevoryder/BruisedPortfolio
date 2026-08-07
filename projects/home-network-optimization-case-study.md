@@ -1,137 +1,115 @@
-# Home Network Optimization Case Study
+# Home Network Optimization & Gigabit Ethernet Restoration
 
-## Project Type
-Networking fundamentals / router configuration / homelab reliability
+## Project Snapshot
 
-## Mission Objective
-Stabilize the home network so server-hosted services and VPN access could function more reliably.
-
-The goal was to reduce confusion caused by changing IP addresses and clarify which parts of the network should be handled by the router versus the server.
-
----
-
-## Environment
-
-| Component | Details |
+| Item | Detail |
 |---|---|
+| Environment | Home LAN supporting Windows Server, Ubuntu Server, WireGuard, Jellyfin, and other self-hosted services |
 | Router | ASUS ROG Rapture GT-AC5300 |
-| Server Role | Ubuntu home server / services host |
-| Services Supported | WireGuard, Jellyfin, OpenClaw, CasaOS-related access |
-| Primary Concern | Stable addressing and service reliability |
+| Primary work | DHCP reservation, role separation, structured Layer 1–3 troubleshooting |
+| Validated result | Stable server addressing and Gigabit Ethernet restored across two affected network paths |
+
+## Objective
+
+Create a predictable home-network foundation for server-hosted services and diagnose two wired paths that were negotiating at 100 Mbps instead of their expected Gigabit rate.
+
+The work involved two related goals:
+
+1. Keep infrastructure endpoints reachable at consistent LAN addresses.
+2. Find the physical cause of the unexpected link-speed limit without replacing equipment blindly.
 
 ---
 
-## Failure Index
+## Case 1 — Stable Server Addressing
 
-1. Server IP could change dynamically
-2. DHCP reservation needed clarification
-3. Router and server responsibilities were blending together
-4. VPN setup required stable internal addressing
-5. Local service access needed predictable network behavior
+### Observed Risk
+
+A server receiving a different address from DHCP can break bookmarks, service references, routing assumptions, and troubleshooting baselines.
+
+### Corrective Action
+
+I mapped the server's network interface to a consistent address through a router-managed DHCP reservation. This kept address management centralized while ensuring the server received the same LAN address after reconnects or reboots.
+
+### Role Separation
+
+| Component | Responsibility |
+|---|---|
+| Router | DHCP, default gateway, LAN addressing, NAT, port forwarding, and network management |
+| Servers | WireGuard, media, storage, application, and other hosted services |
+
+### Validation
+
+The server retained its expected address and local services remained reachable through consistent connection details.
+
+### Takeaway
+
+Stable addressing reduces variables. When a service fails, the operator can investigate the service or network path without first wondering whether the endpoint moved.
 
 ---
 
-## Issue 1 — Dynamic IP Address Concern
+## Case 2 — Gigabit Links Negotiating at 100 Mbps
 
-### Problem
-If the server receives a different IP from DHCP, services become harder to reach. Bookmarks, configs, VPN routing assumptions, and local access paths can break.
+### Expected Behavior
+
+The affected wired network paths should negotiate at 1 Gbps.
+
+### Actual Behavior
+
+Two paths were limited to 100 Mbps even though the connected switching equipment and endpoints supported Gigabit Ethernet.
+
+### Diagnostic Method
+
+I treated the link as a chain and isolated each component instead of assuming the switches were defective:
+
+1. Checked the connected endpoints and reported link rate.
+2. Isolated the switches from the permanent cabling.
+3. Swapped known-good patch cables into the path.
+4. Compared behavior before and after the wall runs.
+5. Narrowed the shared failure point to the wall-jack terminations.
+6. Inspected and corrected the failed keystone jacks.
 
 ### Root Cause
-Default DHCP behavior can assign different addresses over time unless a reservation is created.
 
-### Fix Concept
-Use DHCP reservation on the router to map the server’s MAC address to a consistent internal IP.
+The wall jacks had failed termination points. Gigabit Ethernet requires all four twisted pairs, while a damaged pair can allow a link to fall back to 100 Mbps instead of failing completely.
 
-### Why This Matters
-Static addressing makes troubleshooting cleaner. If the server is always at the same IP, failures are easier to isolate.
+### Corrective Action
 
-### Lesson Learned
-Stable infrastructure starts with stable addressing.
+I replaced the defective keystone termination points and revalidated the complete paths.
 
----
+### Result
 
-## Issue 2 — DHCP Reservation Confusion
+Both affected network paths returned to Gigabit Ethernet connectivity.
 
-### What Needed To Be Understood
-A DHCP reservation is not the same as randomly setting an IP on a device.
+### Takeaway
 
-The router still manages DHCP, but it always gives the same IP to a specific device.
-
-### Mental Model
-
-```text
-Device MAC Address
-        ↓
-Router DHCP Reservation
-        ↓
-Same IP assigned every time
-        ↓
-Services stay reachable
-```
-
-### Lesson Learned
-DHCP reservation keeps centralized control at the router while still giving server-like IP stability.
+A working link is not necessarily a healthy link. Layer 1 faults can appear as a performance limitation, so switches, patch cables, permanent cabling, termination points, and endpoints must be isolated systematically.
 
 ---
 
-## Issue 3 — Router vs Server Responsibilities
+## Troubleshooting Layers Used
 
-### Problem
-There was confusion around what the router should handle versus what the server should handle.
-
-### Clean Separation
-
-| Role | Responsibility |
+| Layer | Checks |
 |---|---|
-| Router | DHCP, LAN addressing, gateway, port forwarding, Wi-Fi/network management |
-| Server | Hosted applications, VPN service, media server, gateway apps, local services |
-
-### Lesson Learned
-When troubleshooting, define ownership. If responsibilities overlap mentally, troubleshooting becomes messy.
-
----
-
-## Issue 4 — VPN and Service Reliability
-
-### Why Network Stability Affected WireGuard
-VPN configs often assume a specific internal addressing scheme. If the server changes IP, access assumptions can break.
-
-### Why Network Stability Affected Jellyfin/OpenClaw
-Local services become easier to reach when the server stays in one known location on the LAN.
-
-### Lesson Learned
-Networking problems often show up as application problems. Fixing the network foundation prevents app-level confusion.
-
----
-
-## Before / After
-
-| State | Description |
-|---|---|
-| Before | Services depended on a home network that could shift addresses and create confusion. |
-| After | Network planning focused on stable server IP, cleaner router/server role separation, and better troubleshooting flow. |
+| Physical | Patch cables, wall runs, RJ45/keystone terminations, endpoint connections |
+| Data link | Negotiated Ethernet rate and switch-port behavior |
+| Network | Stable addressing, gateway responsibilities, and service reachability |
 
 ---
 
 ## Skills Demonstrated
 
-- Router configuration concepts
+- Layer 1–3 troubleshooting
+- Ethernet link-speed diagnosis
+- Cat 5e/Cat 6 termination work
+- RJ45 and keystone troubleshooting
+- Switch and endpoint isolation
 - DHCP reservation planning
-- LAN addressing
-- VPN support planning
-- Service reliability thinking
-- Network troubleshooting
-- Systems documentation
-
----
+- Router/server role separation
+- End-to-end validation
+- Technical documentation
 
 ## Professional Relevance
 
-This project maps to IT support and network support because it required understanding:
+This project maps directly to network support, field support, technical support, and junior infrastructure work. It demonstrates the ability to resist assumptions, isolate a fault across several components, repair the actual failure point, and verify the restored service level.
 
-- DHCP behavior
-- Static vs reserved addressing
-- Service availability
-- Router responsibilities
-- Server responsibilities
-- How network instability can affect application access
+[Back to portfolio](../README.md)
