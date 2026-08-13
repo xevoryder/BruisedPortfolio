@@ -4,6 +4,7 @@ These statements summarize validated work documented in this portfolio. They are
 
 ## Network & Infrastructure Homelab
 
+- Built and deployed a Python network-operations dashboard that monitors device reachability, TCP services, and Docker runtime/health state, stores results in SQLite, serves browser and JSON status views, and passed 14 automated unit tests at its published V1 baseline.
 - Built and maintain a rack-mounted infrastructure environment supporting Windows Server, Ubuntu Server 24.04, RAID-backed storage, and NAS services by installing, configuring, and validating server hardware, operating systems, and centralized storage.
 - Enabled secure remote access to internal network services by deploying WireGuard VPN, onboarding mobile peers, assigning DHCP reservations, configuring required routing and port-forwarding rules, and validating connectivity from external networks.
 - Improved availability of self-hosted services by deploying and troubleshooting Docker, CasaOS, Jellyfin, and OpenClaw, resolving configuration, permissions, dependency, secure-origin, and systemd service failures.
