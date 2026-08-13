@@ -14,6 +14,7 @@ I approach technical problems as an operator: define the expected behavior, isol
 
 | Project | Evidence |
 |---|---|
+| [NetWatch Command](./projects/netwatch-command-case-study.md) | Built and deployed a Python network-operations dashboard with ICMP and TCP checks, read-only Docker health inventory, SQLite history, a web/API interface, automated tests, and a documented WireGuard/UFW incident resolved through layered diagnosis. |
 | [WireGuard VPN Server](./projects/wireguard-vpn-operator-log.md) | Deployed WireGuard on Ubuntu Server 24.04, onboarded a mobile peer, resolved permissions and configuration failures, and validated the traffic path rather than relying only on connection status. |
 | [Home Network Optimization & Gigabit Restoration](./projects/home-network-optimization-case-study.md) | Standardized eight keystone jacks to T568B by replacing two damaged jacks and re-terminating six existing jacks, then validated a 1 Gbps wired Ethernet link. |
 | [Linux Application Gateway Troubleshooting](./projects/openclaw-gateway-operator-log.md) | Used `systemctl --user`, service logs, JSON inspection, origin controls, and permission analysis to diagnose a multi-layer application gateway deployment. |
@@ -25,15 +26,16 @@ I approach technical problems as an operator: define the expected behavior, isol
 
 | Area | Technologies and Practices |
 |---|---|
-| Networking | TCP/IP, IPv4 subnetting/VLSM, VLAN concepts, DHCP, DNS, NAT, port forwarding, WireGuard, routing and switching fundamentals, Layer 1–3 troubleshooting |
-| Systems | Windows Server, Ubuntu Server 24.04, Linux CLI, SSH, systemd, Docker, CasaOS, self-hosted services |
+| Networking | TCP/IP, ICMP, TCP service checks, IPv4 subnetting/VLSM, VLAN concepts, DHCP, DNS, NAT, port forwarding, WireGuard, routing and switching fundamentals, Layer 1–3 troubleshooting |
+| Systems | Windows Server, Ubuntu Server 24.04, Linux CLI, SSH, systemd, Docker, CasaOS, SQLite, self-hosted services |
 | Infrastructure | Rack-mounted hardware, RAID/NAS storage, SMB/NFS concepts, BIOS/UEFI, Cat 5e/Cat 6, RJ45 connectors, keystone terminations |
-| Tools | Cisco Packet Tracer, ASUS ROG Rapture GT-AC5300, GitHub, Microsoft Word and Excel |
+| Tools | Python, Git/GitHub, Cisco Packet Tracer, ASUS ROG Rapture GT-AC5300, Microsoft Word and Excel |
 
 ---
 
 ## Selected Outcomes
 
+- Built and deployed NetWatch Command to monitor real devices, TCP services, and Docker workloads; persisted results in SQLite and validated the live dashboard/API with 14 passing unit tests.
 - Restored Gigabit-capable connectivity across two network paths by correcting eight keystone terminations—replacing two damaged jacks and re-terminating six—and validating a 1 Gbps wired link.
 - Enabled remote access to internal services through a WireGuard VPN with mobile peer onboarding and routing validation.
 - Built and maintained rack-mounted Windows Server and Ubuntu Server infrastructure supporting centralized storage and self-hosted services.
